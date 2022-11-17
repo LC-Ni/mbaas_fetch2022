@@ -49,7 +49,7 @@
             for(var i in results){
                 var data = results[i].get("text");
                 var update = results[i].get("updateDate");
-                msg += data + ":" + update;
+                msg += data + ":" + update + "<br>";
                 $("#message").html(msg);
             }
         })
