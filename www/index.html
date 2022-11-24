@@ -45,13 +45,13 @@
         var TestClass = ncmb.DataStore("FetchTest");
         TestClass.fetchAll()
         .then(function(results){
-            var msg = "";
-            for(var i in results){
-                var data = results[i].get("text");
-                var update = results[i].get("updateDate");
-                msg += data + ":" + update + "<br>";
-                $("#message").html(msg);
+            var msg = "<table><tr><th>message</th><th>Update Date</th></tr>";
+            for(var row of results){
+                var data = row.get("text");
+                var update = row.get("updateDate");
+                msg += "<tr><td>" + data + "</td><td>" + update + "</td></tr>";
             }
+            $("#message").html(msg + "</table>");
         })
     }
     </script>
